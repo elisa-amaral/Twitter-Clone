@@ -17,9 +17,9 @@ This project is a clone from an older version of Twitter build upon the Model-Vi
 + Follow suggested users from the timeline on Who To Follow side panel
 + View the profile of users from the Who To Follow side panel by clicking on the user name
 + Follow/Unfollow users when viewing their profile
-+ Search for a keyword (it can be one letter, one word and many words) on the ***Find friends*** page
-+ Follow/Unfollow users from the keyword searc results on the ***Find friends*** page
-+ View the profile of users from the keyword search results by clicking on the user name
++ Search for a keyword (it can be one letter, one word or many words) on the ***Find friends*** page
++ Follow/Unfollow users from the keyword search results on the ***Find friends*** page
++ View the profile of users from the keyword search results on the ***Find friends*** page by clicking on the user name
 + Follow/Unfollow users when viewing their profile after clicking the user name from the keyword search results on the ***Find friends*** page
 
 ## Login Credentials (all emails are fictional)

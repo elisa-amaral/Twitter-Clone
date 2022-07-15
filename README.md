@@ -1,6 +1,6 @@
 # Twitter Clone
 
-This project is a clone from an older version of Twitter build upon the Model-View-Controller Architecture from the [MVC Framework project](https://github.com/elisa-amaral/MVC-Framework). Back-End Stack: PHP, MySQL (MariaDB), phpMyAdmin and XAMPP. Front-End Stack: HTML, CSS and Bootstrap.
+This project is a clone of an older version of Twitter. It was build upon the Model-View-Controller Architecture from the [MVC Framework project](https://github.com/elisa-amaral/MVC-Framework). Back-End Stack: PHP, MySQL (MariaDB), phpMyAdmin and XAMPP. Front-End Stack: HTML, CSS and Bootstrap.
 
 ## Implemented Features
 

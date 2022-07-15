@@ -14,7 +14,7 @@ This project is a clone from an older version of Twitter build upon the Model-Vi
 + View user's own tweets (if any) on the timeline
 + View followed users' tweets (if any) on the timeline
 + View the profile of any followed user by clicking on the user name from a tweet on the timeline
-+ Follow suggested users from the timeline on Who To Follow panel
++ Follow suggested users from the timeline on Who To Follow side panel
 + View the profile of users from the Who To Follow side panel by clicking on the user name
 + Follow/Unfollow users when viewing their profile
 + Search for a keyword (it can be one letter, one word and many words) on the ***Find friends*** page

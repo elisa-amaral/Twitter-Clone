@@ -11,8 +11,8 @@ This project is a clone from an older version of Twitter build upon the Model-Vi
 + Number of users followed by the authenticated user
 + Number of users following the authenticated user
 + Publish tweet from the timeline
-+ View user's own tweets (if any)
-+ View followed users' tweets (if any)
++ View user's own tweets (if any) on the timeline
++ View followed users' tweets (if any) on the timeline
 + View the profile of any followed user by clicking on the user name from a tweet on the timeline
 + Follow suggested users from the timeline on Who To Follow panel
 + View the profile of users from the Who To Follow side panel by clicking on the user name

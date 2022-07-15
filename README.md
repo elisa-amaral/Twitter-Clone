@@ -31,7 +31,7 @@ This project is a clone from an older version of Twitter coded upon the Model-Vi
 + **User Four**: user4@mail.com 
 + **User Five**: user5@mail.com 
 + **User Six**: user6@mail.com 
-+ **User Seve**: user7@mail.com 
++ **User Seven**: user7@mail.com 
 
 ## Technology Stack
 

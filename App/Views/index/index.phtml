@@ -1,0 +1,69 @@
+<div class="container-fluid h-100">
+	<div class="row h-100">
+    
+    <div class="col-md-6 banner">
+    	<div class="row h-100 justify-content-center align-items-center">
+    		<div>
+				<div class="communicationItem">
+					<i class="fas fa-search fa-2x mr-3"></i>
+					Follow your interests.
+				</div>
+				<div class="communicationItem">
+					<i class="fas fa-user-friends fa-2x mr-3"></i>
+					Hear what people are talking about.
+				</div>
+				<div class="communicationItem">
+					<i class="far fa-comment fa-2x mr-3"></i>
+					Join the conversation.
+				</div>
+			</div>
+		</div>
+    </div>
+
+    <div class="col-md-6 pt-4 pl-5 pr-5 mt-4">
+		<form action="/authenticate" method="post">
+			<div class="row">
+				<div class="col mb-3">
+					<span class="font-weight-bold" style="font-size: 1.05em !important; color: #515151  !important;">Log in to your account:</span>
+				</div>
+			</div>
+			<div class="row">
+				
+				<div class="col">
+					<input name="email" type="text" class="form-control" placeholder="Email">
+				</div>
+				<br>
+				<div class="col">
+					<input name="password" type="password" class="form-control" placeholder="Password">
+				</div>
+				<br>
+				<div class="col-auto">
+					<button type="submit" class="btn btn-primary mb-2"><strong>Log in</strong></button>
+				</div>
+			</div>
+
+			<?php if($this->view->login == 'error') { ?>
+			<div class="row">
+				<div class="col">
+					<strong class="text text-danger">*Incorrect e-mail or password. Try again.</strong>
+				</div>
+			</div>	
+       
+		    <?php } ?>  
+		</form>
+
+		<div class="row pt-5 pl-5 pr-5 mt-3">
+			<div class="col pl-5 pr-5">
+				<img src="/img/twitter_logo.png" />
+				<h1 class="title">See what's happening in the world right now</h1>
+
+				<h2 class="mt-5 subtitle">Join Twitter today.</h2>
+				<a href="/sign_up" class="btn btn-block btn-primary mb-2"><strong>Sign up</strong></a>
+			</div>	
+		</div>
+
+
+    </div>
+
+  </div>
+</div>

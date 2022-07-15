@@ -1,0 +1,347 @@
+html, body 
+{
+  height: 100%;
+}
+
+body 
+{
+    font-family: "Segoe UI", Arial, sans-serif !important;
+
+}
+
+::placeholder 
+{
+  font-weight: bold;
+  
+}
+
+h1 
+{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+h2 
+{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.banner 
+{
+    height: 100%;
+    background-color: #1da1f2;
+}
+
+.title 
+{
+    color: #1da1f2;
+    font-size: 27px;
+    line-height: 32px;
+}
+
+.subtitle 
+{
+    color: #14171a;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 16px auto;
+}
+
+.form-control 
+{
+    background-color: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+}
+
+.comunicacao 
+{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.communicationItem 
+{
+    color: #fff;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 48px auto;
+    position: relative;
+}
+
+.menu 
+{
+    background: #fff;
+    height: 65px;
+    border-bottom: 2px solid rgba(0,0,0,0.25);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+
+}
+
+.header
+{
+    margin-top: 65px;
+    background: #000;
+    height: 150px;
+    width: 100%;
+}
+
+.header img
+{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dados-usuario 
+{
+
+    background: red;
+    height: 50px;
+    width: 100%;
+
+}
+
+
+.menuItem, .menuItem:hover 
+{
+    font-size: 13px;
+    font-weight: bold;
+    color: #1DA1F2;
+    text-decoration: none;
+    margin-right: 25px;
+
+}
+
+.menuIcon 
+{
+    width: 31px;
+    height: 23px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-10px;
+    margin-left:-15px;
+}
+
+.profile 
+{
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 2px solid #e6ecf0;
+    background: #fff;
+    position: relative;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+}
+
+.profileTop 
+{
+    height: 95px;
+    background-color: #e3e3e3;
+}
+
+.profileTop img
+{
+   height: 150px;
+   width: 150px;
+   border-radius: 50%;
+   margin-top: -75px;
+   margin-bottom: 5px;
+   object-fit: cover;
+
+   /* outline: */
+   background-color: #fff;
+   padding: 5px;
+}
+
+.profilePannel 
+{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.profilePannelUserFullName 
+{
+    font-weight: bold;
+    font-size: 1.25em;
+    line-height: 25px;
+}
+
+.profilePannelItem  
+{
+    color: #657786;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .02em;
+    line-height: 16px;
+    overflow: hidden;
+    transition: color .15s ease-in-out;
+}
+
+.profilePannelItemValue 
+{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 3px;
+    transition: color .15s;
+    color: #1DA1F2 !important;
+}
+
+.tweetBox 
+{
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    border: 1px solid #e6ecf0;
+    background-color: #ddf1fd;
+    padding:25px;
+}
+
+input
+{
+    font-weight: bold;
+}
+
+.tweet 
+{
+    padding:15px;
+    border-bottom: 1px solid #e6ecf0;
+    cursor: pointer;
+}
+
+.tweet:hover 
+{
+    background-color: #f5f8fa;
+}
+
+
+.dot 
+{
+  height: 5px;
+  width: 5px;
+  margin-bottom: 1px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tweetData
+{
+    display: flex;
+    align-items: flex-start;
+}
+
+.tweetDataUserFullName
+{
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.tweetDataUserProfilePicture
+{
+   display: flex;
+   height: 56px;
+   width: 60px;
+   border-radius: 50%;
+   margin-right: 12px;
+   margin-bottom: 25px;
+}
+
+
+.randomWhoToFollow 
+{
+    border-radius: 25px;
+    border: 2px solid #e6ecf0;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px;
+}
+
+.randomWhoToFollowItem 
+{
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #0089DD !important;
+}
+
+
+.randomWhoToFollowItem
+{
+    display: block;
+    padding-bottom: 10px;
+}
+
+.randomWhoToFollowUserProfilePicture
+{
+   height: 46px;
+   width: 50px;
+   border-radius: 50%;
+   padding: 5px;
+}
+
+.randomWhoToFollowUserFullName
+{
+    color: #000;
+    font-size: 1.05em;
+
+}
+
+.randomWhoToFollowFindFriendsButton, .randomWhoToFollowFindFriendsButton:hover 
+{
+    font-weight: bold;
+    font-size: 1.2em !important;
+    color: #0089DD;
+}
+
+.searchResultsUsersItem
+{
+
+    display: flex;
+    align-items: flex-start;
+   
+}
+
+.fotoPerfilUsuariosResultadoBusca
+{
+   display: flex;
+   height: 57px;
+   width: 62px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+
+.searchResultsUserFullName
+{
+    color: #000;
+    font-weight: bold;
+    font-size: 1.15em;
+}
+

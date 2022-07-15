@@ -1,0 +1,176 @@
+<nav class="navbar navbar-expand-lg menu">
+	<div class="container">
+	  <div class="navbar-nav">
+	  <a class="menuItem" href="/timeline">
+	  		<strong style="font-size: 1.3em !important;">Home</strong>
+	  	</a>
+
+	  	<a class="menuItem" href="/sair">
+	  		<strong style="font-size: 1.3em !important;">Log out</strong>
+	  	</a>
+			<img src="/img/twitter_logo.png" class="menuIcon" />
+	  </div>
+	</div>
+</nav>
+
+<div class="header">
+	<?php 
+	   if($this->view->defaultHeaderImage)
+	   {
+	   	echo '<img src="img/default_headerImage.jpg">';
+	   }
+	  
+	?>
+</div>
+
+<div class="container">
+	
+	<div class="row">
+		
+		<div class="col-md-3">
+
+			<div class="profile">
+
+				<div class="profileTop text-center">
+
+					<?php  
+                    
+                      if($this->view->defaultProfilePicture)
+                      {
+                      	echo '<img src="img/default_profilePicture.png">';
+                      }
+                    
+					?>
+
+				</div>
+            
+				<div class="profilePannel text-center">
+					
+					<div class="row mt-2 mb-2">
+						<div class="col mb-2">
+							<span class="profilePannelUserFullName">
+							    <?=$this->view->userData['full_name']?>
+							</span>
+						</div>
+					</div>
+
+					<div class="row mb-2">
+
+						<div class="col">
+							<span class="profilePannelItem">Tweets</span><br />
+							<span class="profilePannelItemValue">
+	                             <?=$this->view->totalTweets['total_tweets']?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="profilePannelItem">Following</span><br />
+							<span class="profilePannelItemValue">
+								<?=$this->view->totalFollows['total_follows']?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="profilePannelItem">Followers</span><br />
+							<span class="profilePannelItemValue">
+								<?=$this->view->totalFollowers['total_followers']?>
+							</span>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="col-md-8">
+
+			<div class="row mb-2 pt-1">
+				<div class="col">
+					<div class="card">
+						<div class="card-body">
+							<form action="/find_friends" method="get">
+								<div class="input-group mb-3">
+									<input name="search_for" type="text" class="form-control" placeholder="Who are you looking for?">
+									<div class="input-group-append">
+										<button class="btn btn-primary" type="submit"><strong>Search</strong></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<?php foreach($this->view->searchResultsUsers as $array_index => $user) { ?>
+			
+				<div class="row mb-2">
+					<div class="col">
+						<div class="card">
+							<div class="card-body">
+								<div class="row">
+
+									<div class="col-md-6">
+
+										<div class="searchResultsUsersItem">
+										<?php  
+					                    
+					                      if($user['profile_picture'] == '')
+					                      {
+					                      	echo '<img src="img/default_profilePicture.png" class="fotoPerfilUsuariosResultadoBusca">';
+					                      }
+	
+											
+											if($user['boolean_follow'] == 0) 
+											{ ?>
+											
+												<a href="/timeline?view_profile_user_id=<?=$user['id']?>&hide_viewed_profile=yes" class="searchResultsUserFullName mt-3"><?= $user['full_name']?></a>
+
+											<?php 
+											} 
+											else 
+											{ ?>
+
+												<a href="/timeline?view_profile_user_id=<?=$user['id']?>&hide_viewed_profile=no" class="searchResultsUserFullName mt-3"><?= $user['full_name']?></a>
+
+											<?php }?>
+
+										</div>
+									
+									</div>
+								
+									<div class="col-md-6 d-flex justify-content-end">
+										<div>
+
+											<?php  if ($user['boolean_follow'] == 0) { 
+											
+										    ?>
+												<a href="/follow_unfollow?action=follow&followed_user_id=<?=$user['id']?>&search_for=<?=$this->view->search_for?>" class="btn btn-success">
+													<span class="font-weight-bold">&nbsp;&nbsp;Follow&nbsp;&nbsp;</span>
+												</a>
+											<?php } ?> 
+
+                                            <?php  if ($user['boolean_follow'] == 1) { 
+											 
+                                            ?>
+												<a href="/follow_unfollow?action=unfollow&followed_user_id=<?=$user['id']?>&search_for=<?=$this->view->search_for?>" class="btn btn-danger">
+													<span class="font-weight-bold">Unfollow</span>
+												</a>
+											<?php } ?> 
+											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			<?php } ?> 
+
+		</div>
+	</div>
+</div>

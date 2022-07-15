@@ -1,0 +1,265 @@
+<nav class="navbar navbar-expand-lg menu">
+	<div class="container">
+	  <div class="navbar-nav">
+	  	<a class="menuItem" href="/timeline">
+	  		<strong style="font-size: 1.3em !important;">Home</strong>
+	  	</a>
+
+	  	<a class="menuItem" href="/log_out">
+	  		<strong style="font-size: 1.3em !important;">Log out</strong>
+	  	</a>
+			<img src="/img/twitter_logo.png" class="menuIcon" />
+	  </div>
+	</div>
+</nav>
+
+<div class="header">
+	<?php 
+	 
+	   if($this->view->defaultHeaderImage)
+	   {
+			echo '<img src="img/default_headerImage.jpg">';
+	   }
+	?>
+</div>
+
+
+<div class="container">
+
+	<div class="row">
+		
+		<div class="col-md-3">
+
+			<div class="profile">
+
+				<div class="profileTop text-center">
+
+					<?php  
+
+                      if($this->view->defaultProfilePicture)
+                      {
+                      	echo '<img src="img/default_profilePicture.png">';
+                      }
+                     
+					?>
+
+				</div>
+
+				<div class="profilePannel text-center">
+					
+					<div class="row mt-2 mb-2">
+						<div class="col mb-2">
+							<span class="profilePannelUserFullName">
+							    <?=$this->view->userData['full_name']?>
+							</span>
+						</div>
+					</div>
+
+					<div class="row mb-2">
+
+						<div class="col">
+							<span class="profilePannelItem">Tweets</span><br />
+							<span class="profilePannelItemValue">
+	                             <?=$this->view->totalTweets['total_tweets']?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="profilePannelItem">Following</span><br />
+							<span class="profilePannelItemValue">
+								<?=$this->view->totalFollows['total_follows']?>
+							</span>
+						</div>
+
+						<div class="col">
+							<span class="profilePannelItem">Followers</span><br />
+							<span class="profilePannelItemValue">
+								<?=$this->view->totalFollowers['total_followers']?>
+							</span>
+						</div>
+
+					</div>
+
+
+                    <?php  
+
+                         if($this->view->showFollowButton) { ?>
+
+						<a href="/follow_unfollow_on_viewed_profile?action=follow&followed_user_id=<?=$this->view->followed_user_id?>" class="btn btn-success mb-2 mt-2">&nbsp;&nbsp;<strong>Follow</strong>&nbsp;&nbsp;</a>
+
+                    <?php }
+
+                        if($this->view->showUnfollowButton) { ?>
+
+						<a href="/follow_unfollow_on_viewed_profile?action=unfollow&followed_user_id=<?=$this->view->followed_user_id?>&hide_viewed_profile=yes" class="btn btn-danger mb-2 mt-2"><strong>Unfollow</strong></a>
+
+                    <?php } ?>
+                    
+
+				</div>
+               
+			</div>
+
+		</div>
+
+		<div class="col-md-6">
+				<?php  
+				
+				if($this->view->user_is_on_home_timeline)
+				{
+				
+				?>
+				<div class="row mb-2 pt-1">
+					<div class="col tweetBox">
+						<form  action="/publish_tweet" method="post">
+							<textarea name="tweet" class="form-control" rows="3"></textarea>
+							
+							<div class="col mt-2 d-flex justify-content-end">
+								<button type="submit" class="btn btn-primary">
+									<span class="font-weight-bold">Tweet</span>
+								</button>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<?php  
+				}
+				else
+				{
+					echo '<br><br>';
+				}
+				?>
+
+			<?php foreach($this->view->tweets as $tweet_id => $tweet) { ?>
+				<div class="row tweet">
+					<div class="col">
+
+						<div class="tweetData">
+							<?php  
+
+		                      if($this->view->defaultProfilePicture)
+		                      {
+								echo '<img src="img/default_profilePicture.png" class="tweetDataUserProfilePicture">';
+		                      }
+		                
+
+							?>
+
+							<?php  
+							
+							if($this->view->user_is_on_home_timeline) 
+							{ 	
+								if($tweet['user_id'] == $this->view->view_profile_user_id)
+								{
+							?>
+								<span class="font-weight-bold randomWhoToFollowUserFullName mt-2">
+									<?=$tweet['full_name']?>
+								</span>	
+
+							<?php
+
+								}
+
+								else 
+								{ 
+									
+								?>
+                                    <a href="/timeline?view_profile_user_id=<?=$tweet['user_id']?>&hide_viewed_profile=no" class="tweetDataUserFullName mt-2">
+										<?=$tweet['full_name']?>
+									</a>
+								<?php 
+								
+							     } 
+
+							}
+							else 
+							{ 
+								
+							?>
+								<span class="font-weight-bold randomWhoToFollowUserFullName mt-2">
+									<?=$tweet['full_name']?>
+								</span>	
+							<?php 
+							} 
+							?>
+							
+			
+							<span class="text text-muted mt-2">
+							&nbsp;&nbsp;<span class="dot"></span>&nbsp;&nbsp;<?=$tweet['formated_datetime']?>
+							</span>
+						</div>
+						
+						<p>
+							<?=$tweet['tweet']?>
+								
+						</p>
+
+						<?php if($tweet['user_id'] == $_SESSION['id']) { ?>
+                            
+							<form action="/delete_tweet" method="get">
+								<input type="hidden" name="id" value="<?=$tweet['id']?>" />
+								<div class="col d-flex justify-content-end">
+									<button type="submit" class="btn btn-danger"><small class="font-weight-bold">Delete</small></button>
+								</div>
+							</form>
+
+						<?php } ?>
+					</div>
+				</div>
+
+		    <?php }  ?> 
+
+
+		</div> 
+
+
+		<div class="col-md-3 pt-1">
+			<div class="randomWhoToFollow">
+				<div class="randomWhoToFollowItem text-center mt-1 mb-4">Who to follow</div>
+			
+				<?php  
+
+					foreach($this->view->randomWhoToFollow as $array_index => $user) { 
+
+						 if($user['boolean_follow'] == 0)  {  ?>
+
+							<div class="randomWhoToFollowItem">
+	                           	    
+					                    <?php 
+										      
+											  if($this->view->defaultProfilePicture) 
+						                      { 
+							                      echo '<img src="img/default_profilePicture.png" class="randomWhoToFollowUserProfilePicture">';
+
+						                      } 
+
+						                ?>
+				                        <a href="/timeline?view_profile_user_id=<?=$user['id']?>&hide_viewed_profile=yes" class="font-weight-bold randomWhoToFollowUserFullName mt-2">
+				                        	<?=$user['full_name']?>
+				                        </a>
+                                        
+										
+										<br>
+				                        
+                        	
+				             </div>       
+                             
+                             <a href="/follow_on_timeline?action=follow&followed_user_id=<?=$user['id']?>" class="btn-sm btn-success"><span class="font-weight-bold">Follow</span></a>
+	                         
+							<hr>
+
+					    <?php } ?>
+
+				<?php } ?> 		
+               
+				<i class="fas fa-user-plus fa-lg" style="color: #0089DD !important;"></i>&nbsp;
+				<a class="randomWhoToFollowFindFriendsButton" href="/find_friends">Find friends</a>
+
+			</div>
+			
+		</div>
+
+	</div>
+</div> 
+

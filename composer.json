@@ -1,0 +1,17 @@
+{
+	"name": "miniframework",
+	"require": {
+		"php": ">= 7.0"
+	},
+	"authors": [
+		{
+			"name": "Elisa Amaral"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"App\\": "App/",
+			"Miniframework\\": "vendor/Miniframework/"
+		}
+	}
+}

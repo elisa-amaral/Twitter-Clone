@@ -35,6 +35,7 @@ This project is a clone from an older version of Twitter coded upon the Model-Vi
 
 ## Technology Stack
 
++ [MVC Framework project](https://github.com/elisa-amaral/MVC-Framework)
 + PHP
 + MySQL (MariaDB)
 + phpMyAdmin
